@@ -68,4 +68,13 @@ public class TestBudget {
         budget.addExpense(expense);
         Assert.assertEquals(1, budget.getExpenses(2017, 2).size());
     }
+
+    @Test
+    public void expenseFromMarch(){
+        Calendar c = Calendar.getInstance();
+        c.set(2017, 03, 01);
+        Expense expense = new Expense(Category.FOODS, c.getTime(), BigDecimal.valueOf(18.00));
+        budget.addExpense(expense);
+        Assert.assertEquals(1, budget.getExpenses(2017, 3).size());
+    }
 }
