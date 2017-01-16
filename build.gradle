@@ -1,0 +1,19 @@
+group 'Budget'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+war {
+    webInf { from 'src/main/java/WEB-INF/' } // adds a file-set to the WEB-INF dir.
+}
